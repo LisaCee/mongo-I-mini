@@ -4,6 +4,7 @@ const definition = {
     species: {
         type: String,
         required: true,
+        // unique: true
     }, // String, required
     latinName: {
         type: String,
