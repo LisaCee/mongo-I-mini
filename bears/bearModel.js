@@ -3,26 +3,25 @@ const mongoose = require('mongoose');
 const definition = {
     species: {
         type: String,
-        required: true,
-        // unique: true
-    }, // String, required
+        // required: true,
+    },
     latinName: {
         type: String,
-        required: true,
-    }, // String, required
+        // required: true,
+    },
     createdOn: {
         type: Date,
         default: Date.now,
-    } // Date, required, defaults to current date
+    } 
 }
 
 const options = {
-    timestamps: true,    //includes updates
-};
+    timestamps: true,  
+}
 
 const bearSchema = new mongoose.Schema(definition, options);
 
 const bearModel = mongoose.model('Bear', bearSchema, 'bears');
 //third argument, by default is 'Bear' + lowercase + plural
-
+// or module.exports=(mongoose.model('Bear', bearSchema))
 module.exports = bearModel;
